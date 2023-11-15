@@ -1,4 +1,4 @@
-package com.example.dsalgoca2;
+package model;
 
 import com.example.dsalgoca2.utils.Utilities;
 

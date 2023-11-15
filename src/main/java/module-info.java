@@ -7,4 +7,6 @@ module com.example.dsalgoca2 {
     exports com.example.dsalgoca2;
     exports controller;
     opens controller to javafx.fxml;
+    exports model;
+    opens model to javafx.fxml;
 }
