@@ -1,6 +1,8 @@
 package dataStructures.CustomLinkedList;
 
-public class CustomLinkedList<T> {
+import java.util.Iterator;
+
+public class CustomLinkedList<T> implements Iterable {
 
     public Node<T> head=null;
 
@@ -61,5 +63,10 @@ public class CustomLinkedList<T> {
             return "No elements in this list";
         }
         return list;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new CustomLinkedListIterator<T>(head);
     }
 }

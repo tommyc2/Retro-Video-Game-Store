@@ -1,4 +1,4 @@
-package com.example.dsalgoca2.utils;
+package utils;
 
 import java.util.Scanner;
 

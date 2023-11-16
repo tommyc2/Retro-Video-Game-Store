@@ -1,11 +1,10 @@
 package model;
 
-import com.example.dsalgoca2.utils.Utilities;
+import utils.Utilities;
 
 public class GameMachine {
     private String name;
     private String manufacturer;
-
     private String description;
     private String type;
     private String media;
@@ -110,5 +109,19 @@ public class GameMachine {
         if (Utilities.validStringlength(URL,100)) {
             this.URL = URL;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "GameMachine { " +
+                "name='" + name + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", description='" + description + '\'' +
+                ", type='" + type + '\'' +
+                ", media='" + media + '\'' +
+                ", initialLaunchYear=" + initialLaunchYear +
+                ", price=" + price +
+                ", URL='" + URL + '\'' +
+                '}';
     }
 }
