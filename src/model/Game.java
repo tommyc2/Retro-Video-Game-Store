@@ -16,7 +16,7 @@ public class Game {
 
     private int yearReleased;
 
-    private String coverArt;
+    private String URL;
 
     public Game(String title, String publisher, String description, String orginalDeveloper, String orginalMachine, int yearReleased, String coverArt) {
         this.title = title;
@@ -25,7 +25,7 @@ public class Game {
         this.orginalDeveloper = orginalDeveloper;
         this.orginalMachine = orginalMachine;
         this.yearReleased = yearReleased;
-        this.coverArt = coverArt;
+        this.URL = URL;
     }
 
     public String getTitle() {
@@ -85,19 +85,30 @@ public class Game {
     public void setYearReleased(int yearReleased) {
         if (Utilities.validRange(yearReleased, 1958, 2023)) {
             this.yearReleased = yearReleased;
+        }else{
+            System.out.println("Invalid release year")
         }
     }
 
-    public String getCoverArt() {
-        return coverArt;
+    public String getURL() {
+        return URL;
     }
 
-    public void setCoverArt(String coverArt) {
-        this.coverArt = coverArt;
+    public void setURL(String URL) {
+        this.URL = URL;
     }
 
     @Override
-    public String toString() {
-        return "";
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Game " +
+                "title='" + title + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", description='" + description + '\'' +
+                ", orginalDeveloper='" + orginalDeveloper + '\'' +
+                ", orginalMachine='" + orginalMachine + '\'' +
+                ", yearReleased=" + yearReleased +
+                ", URL='" + URL ;
     }
 }
