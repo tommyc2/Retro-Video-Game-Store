@@ -42,7 +42,7 @@ public class Game {
     }
 
     public void setPublisher(String publisher) {
-        if (Utilities.truncateString(publisher, 25)) {
+        if (Utilities.validStringlength(publisher, 25)) {
             this.publisher = publisher;
         }
     }
@@ -52,7 +52,7 @@ public class Game {
     }
 
     public void setDescription(String description) {
-        if (Utilities.truncateString(description, 25)) {
+        if (Utilities.validStringlength(description, 25)) {
             this.description = description;
         }
     }
@@ -63,7 +63,7 @@ public class Game {
     }
 
     public void setOrginalDeveloper(String orginalDeveloper) {
-        if (Utilities.truncateString(orginalDeveloper, 25)) {
+        if (Utilities.validStringlength(orginalDeveloper, 25)) {
             this.orginalDeveloper = orginalDeveloper;
         }
     }
@@ -73,7 +73,7 @@ public class Game {
     }
 
     public void setOrginalMachine(String orginalMachine) {
-        if (Utilities.truncateString(orginalMachine, 25)) {
+        if (Utilities.validStringlength(orginalMachine, 25)) {
             this.orginalMachine = orginalMachine;
         }
     }
