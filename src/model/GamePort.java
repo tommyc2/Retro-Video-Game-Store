@@ -4,11 +4,11 @@ public class GamePort {
 
     /* Hierarchy for Model Classes yet to be decided */
 
-    Game gameBeingPorted;
-    GameMachine portedToGamesMachine;
-    String gamePortDeveloper = "";
-    int releaseYear = 2023;
-    String coverArtImageURL = "";
+    private Game gameBeingPorted;
+    private GameMachine portedToGamesMachine;
+    private String gamePortDeveloper = "";
+    private int releaseYear = 2023;
+    private String coverArtImageURL = "";
 
     public GamePort(Game gameBeingPorted, GameMachine portedToGamesMachine, String gamePortDeveloper, int releaseYear, String coverArtImageURL) {
         // Game

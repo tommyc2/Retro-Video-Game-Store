@@ -18,14 +18,14 @@ public class Game {
 
     private String URL;
 
-    public Game(String title, String publisher, String description, String orginalDeveloper, String orginalMachine, int yearReleased, String coverArt) {
-        this.title = title;
-        this.publisher = publisher;
-        this.description = description;
-        this.orginalDeveloper = orginalDeveloper;
-        this.orginalMachine = orginalMachine;
-        this.yearReleased = yearReleased;
-        this.URL = URL;
+    public Game(String title, String publisher, String description, String orginalDeveloper, String orginalMachine, int yearReleased, String coverArtURL) {
+        setTitle(title);
+        setPublisher(publisher);
+        setDescription(description);
+        setOrginalDeveloper(orginalDeveloper);
+        setOrginalMachine(orginalMachine);
+        setYearReleased(yearReleased);
+        setURL(coverArtURL);
     }
 
     public String getTitle() {
@@ -33,8 +33,7 @@ public class Game {
     }
 
     public void setTitle(String title) {
-        if(title.length()<=35)
-        this.title = title;
+        if(title.length()<=35) this.title = title;
     }
 
     public String getPublisher() {
@@ -58,7 +57,6 @@ public class Game {
     }
 
     public String getOrginalDeveloper() {
-
         return orginalDeveloper;
     }
 
@@ -85,8 +83,6 @@ public class Game {
     public void setYearReleased(int yearReleased) {
         if (Utilities.validRange(yearReleased, 1958, 2023)) {
             this.yearReleased = yearReleased;
-        }else{
-            System.out.println("Invalid release year")
         }
     }
 
@@ -99,8 +95,6 @@ public class Game {
     }
 
     @Override
-
-    @java.lang.Override
     public java.lang.String toString() {
         return "Game " +
                 "title='" + title + '\'' +

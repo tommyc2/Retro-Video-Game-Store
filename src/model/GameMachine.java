@@ -13,14 +13,14 @@ public class GameMachine {
     private String URL;
 
     public GameMachine(String name, String manufacturer, String description, String type, String media, int initialLaunchYear, double price, String URL) {
-        this.name = name;
-        this.manufacturer = manufacturer;
-        this.description = description;
-        this.type = type;
-        this.media = media;
-        this.initialLaunchYear = initialLaunchYear;
-        this.price = price;
-        this.URL = URL;
+        setName(name);
+        setManufacturer(manufacturer);
+        setDescription(description);
+        setType(type);
+        setMedia(media);
+        setInitialLaunchYear(initialLaunchYear);
+        setPrice(price);
+        setURL(URL);
     }
 
     public String getName() {
