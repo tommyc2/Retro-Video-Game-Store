@@ -1,6 +1,8 @@
 package model;
 
 import utils.Utilities;
+import model.GameMachine;
+import model.GamePort;
 
 public class Game {
 
@@ -12,18 +14,15 @@ public class Game {
 
     private String orginalDeveloper;
 
-    private String orginalMachine;
-
     private int yearReleased;
 
     private String URL;
 
-    public Game(String title, String publisher, String description, String orginalDeveloper, String orginalMachine, int yearReleased, String coverArtURL) {
+    public Game(String title, String publisher, String description, String orginalDeveloper, int yearReleased, String coverArtURL) {
         setTitle(title);
         setPublisher(publisher);
         setDescription(description);
         setOrginalDeveloper(orginalDeveloper);
-        setOrginalMachine(orginalMachine);
         setYearReleased(yearReleased);
         setURL(coverArtURL);
     }
@@ -66,15 +65,18 @@ public class Game {
         }
     }
 
-    public String getOrginalMachine() {
+    /* public String getOrginalMachine() {
         return orginalMachine;
     }
+    */
 
-    public void setOrginalMachine(String orginalMachine) {
+   /* public void setOrginalMachine(String orginalMachine) {
         if (Utilities.validStringlength(orginalMachine, 25)) {
             this.orginalMachine = orginalMachine;
         }
     }
+    */
+
 
     public int getYearReleased() {
         return yearReleased;
@@ -101,7 +103,6 @@ public class Game {
                 ", publisher='" + publisher + '\'' +
                 ", description='" + description + '\'' +
                 ", orginalDeveloper='" + orginalDeveloper + '\'' +
-                ", orginalMachine='" + orginalMachine + '\'' +
                 ", yearReleased=" + yearReleased +
                 ", URL='" + URL ;
     }

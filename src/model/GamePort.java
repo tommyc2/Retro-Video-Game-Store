@@ -1,26 +1,15 @@
 package model;
 import utils.Utilities;
 public class GamePort {
-
-    /* Hierarchy for Model Classes yet to be decided */
-
-    private Game gameBeingPorted;
-    private GameMachine portedToGamesMachine;
     private String gamePortDeveloper = "";
     private int releaseYear = 2023;
     private String coverArtImageURL = "";
 
-    public GamePort(Game gameBeingPorted, GameMachine portedToGamesMachine, String gamePortDeveloper, int releaseYear, String coverArtImageURL) {
-        // Game
-        // Games Machine
+    public GamePort(String gamePortDeveloper, int releaseYear, String coverArtImageURL) {
         setGamePortDeveloper(gamePortDeveloper);
         setReleaseYear(releaseYear);
         setCoverArtImageURL(coverArtImageURL);
     }
-
-    // -------------------------------------------------------------------///
-    // Getter and setters for games machine and game yet to be added //
-    // -------------------------------------------------------------------///
 
     public String getGamePortDeveloper() {
         return gamePortDeveloper;
@@ -35,11 +24,8 @@ public class GamePort {
     }
 
     public void setReleaseYear(int releaseYear) {
-        /* if (releaseYear < game release year)
-        {
+        /* Validation in driver */
         this.releaseYear = releaseYear;
-        }
-        */
     }
 
     public String getCoverArtImageURL() {
@@ -51,7 +37,11 @@ public class GamePort {
     }
 
     @Override
-    public String toString(){
-        return "";
+    public String toString() {
+        return "GamePort {" +
+                "gamePortDeveloper = '" + gamePortDeveloper + '\'' +
+                ", releaseYear = " + releaseYear +
+                ", coverArtImageURL = '" + coverArtImageURL + '\'' +
+                '}';
     }
 }

@@ -27,6 +27,22 @@ public class GameMachine {
         setURL(URL);
     }
 
+    //TODO - listGamesinMachine()
+    public String listGamesInGameMachine(){
+        return games.listTableElements();
+    }
+
+    //TODO
+    public void addGame(Game newGame) {
+     //   int key = Math.random()%games.
+     //   games.add()
+    }
+
+    //TODO
+    public String listGamePortsForMachine(){
+        return gamePorts.listTableElements();
+    }
+
     public String getName() {
         return name;
     }
