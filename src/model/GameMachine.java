@@ -1,5 +1,6 @@
 package model;
 
+import dataStructures.Hashing.HashTable;
 import utils.Utilities;
 
 public class GameMachine {
@@ -11,6 +12,9 @@ public class GameMachine {
     private int initialLaunchYear;
     private double price;
     private String URL;
+
+    private HashTable<Game> games = new HashTable<>(100);
+    private HashTable<GamePort> gamePorts = new HashTable<>(100);
 
     public GameMachine(String name, String manufacturer, String description, String type, String media, int initialLaunchYear, double price, String URL) {
         setName(name);

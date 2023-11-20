@@ -1,12 +1,10 @@
 package dataStructures.Hashing;
 
-public class HashTable {
+public class HashTable<T> {
 
-    /* This hash table implements an open addressing model (linear probing) */
-
-    int[] hashTable;
+    T[] hashTable;
 
     public HashTable(int size){
-        hashTable = new int[100];
+        hashTable = (T[]) new Object[size];
     }
 }
