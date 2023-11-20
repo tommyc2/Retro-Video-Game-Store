@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 public class CustomLinkedList<T> implements Iterable {
 
+    /* Written by: Tommy Condon */
+
     public Node<T> head=null;
 
     public void add(T c){

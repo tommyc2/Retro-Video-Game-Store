@@ -2,6 +2,9 @@ package dataStructures.Hashing;
 
 public class HashTable<T> {
 
+    /* Hash Table using Quadratic Probing technique */
+    /* Uses primitive array to store objects of a specified type */
+    /* Written by: Tommy Condon */
     T[] hashTable;
 
     public HashTable(int size){

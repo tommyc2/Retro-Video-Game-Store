@@ -1,6 +1,8 @@
 package dataStructures.CustomLinkedList;
 
 public class Node<T> {
+
+    /* Written by: Tommy Condon */
     public Node<T> next=null;
     private T contents;
 

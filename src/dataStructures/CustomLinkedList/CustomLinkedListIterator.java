@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 public class CustomLinkedListIterator<T> implements Iterator<T> {
 
+    /* Written by: Tommy Condon */
     private Node<T> currentPosition;
 
     public CustomLinkedListIterator(Node<T> node) {
