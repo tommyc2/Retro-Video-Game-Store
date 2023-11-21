@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 */
 
 
-public class Driver /* extends Applicationnn */ {
+public class Driver /* extends Applicationnnn */ {
 
     private SystemAPI systemAPI = new SystemAPI();
 
