@@ -27,7 +27,7 @@ public class GameMachine {
         setURL(URL);
     }
 
-    //TODO - listGamesinMachine()
+    //TODO
     public String listGamesInGameMachine(){
         return games.listTableElements();
     }
