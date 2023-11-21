@@ -22,7 +22,7 @@ public class HashTable<T> {
     public boolean add(T data){
         int randomValue = (int) Math.random();
         int newIndex = hashFunction(randomValue);
-        int location = newIndex;
+        int location = newIndex; //fix
         int probe = 1;
         do {
             if(hashTable[location]!=null) {
