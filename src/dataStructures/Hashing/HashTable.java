@@ -1,18 +1,20 @@
 package dataStructures.Hashing;
 
+import dataStructures.CustomLinkedList.Node;
+
 public class HashTable<T> {
 
     /* Hash Table using Quadratic Probing technique */
     /* Uses primitive array to store objects of a specified type */
     /* Written by: Tommy Condon */
-    /* Open Addressing */
+
     T[] hashTable;
 
     public HashTable(int size){
         hashTable = (T[]) new Object[size];
     }
 
-    //TODO
+
     public int hashFunction(int key) {
         return key % hashTable.length;
     }
@@ -20,12 +22,12 @@ public class HashTable<T> {
 
     //TODO
     public boolean add(T data){
-        int randomValue = (int) Math.random();
-        int newIndex = hashFunction(randomValue);
-        int location = newIndex; //fix
+        int randomValue = (int) Math.random() * (hashTable.length);
+        int home = hashFunction(randomValue);
+        int location = home;
         int probe = 1;
         do {
-            if(hashTable[location]!=null) {
+            if(hashTable[location]==null) {
                 hashTable[location] = data;
                 return true;
             }
@@ -37,19 +39,39 @@ public class HashTable<T> {
         return false;
     }
 
-    //TODO
+
     public String listTableElements(){
-       // for()
-        return "";
+        String list = "";
+        for(int id = 0; id < hashTable.length; id++){
+            if(hashTable[id]!=null){
+                list += "(" + (id) + ") " + hashTable[id].toString() +"\n";
+            }
+        }
+
+        if (list.isEmpty()) return "List is empty";
+
+        else {
+            return list;
+        }
     }
 
-    //TODO
+
     public T getByIndexID(int id){
-        T obj = (T) new Object();
-        return obj;
+        if(hashTable[id]!=null){
+            return hashTable[id];
+        }
+        return null;
     }
 
-
-
+    public int indexOf(T c){
+        for(int i = 0; i < hashTable.length; i++){
+            if(hashTable[i]!=null){
+                if(hashTable[i].equals(c)){
+                    return (i);
+                }
+            }
+        }
+        return -1;
+    }
 
 }
