@@ -19,8 +19,9 @@ public class HashTable<T> {
 
 
     //TODO
-    public boolean add(int key, T data){
-        int newIndex = hashFunction(key);
+    public boolean add(T data){
+        int randomValue = (int) Math.random();
+        int newIndex = hashFunction(randomValue);
         int location = newIndex;
         int probe = 1;
         do {
@@ -38,6 +39,7 @@ public class HashTable<T> {
 
     //TODO
     public String listTableElements(){
+       // for()
         return "";
     }
 
