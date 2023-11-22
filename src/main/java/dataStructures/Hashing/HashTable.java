@@ -1,7 +1,5 @@
 package dataStructures.Hashing;
 
-import dataStructures.CustomLinkedList.Node;
-
 public class HashTable<T> {
 
     /* Hash Table using Quadratic Probing technique */
@@ -22,8 +20,7 @@ public class HashTable<T> {
 
     //TODO
     public boolean add(T data){
-        int randomValue = (int) Math.random() * (hashTable.length);
-        int home = hashFunction(randomValue);
+        int home = hashFunction(Math.abs(data.hashCode()));
         int location = home;
         int probe = 1;
         do {
@@ -48,11 +45,8 @@ public class HashTable<T> {
             }
         }
 
-        if (list.isEmpty()) return "List is empty";
+        return list;
 
-        else {
-            return list;
-        }
     }
 
 
@@ -63,7 +57,7 @@ public class HashTable<T> {
         return null;
     }
 
-    public int indexOf(T c){
+    /* public int indexOf(T c){
         for(int i = 0; i < hashTable.length; i++){
             if(hashTable[i]!=null){
                 if(hashTable[i].equals(c)){
@@ -73,5 +67,5 @@ public class HashTable<T> {
         }
         return -1;
     }
-
+*/
 }

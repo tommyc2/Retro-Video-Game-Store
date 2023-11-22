@@ -1,8 +1,6 @@
 package model;
 
 import utils.Utilities;
-import model.GameMachine;
-import model.GamePort;
 
 public class Game {
 

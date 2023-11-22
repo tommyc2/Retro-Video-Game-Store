@@ -2,7 +2,7 @@ package dataStructures.CustomLinkedList;
 
 import java.util.Iterator;
 
-public class CustomLinkedList<T> implements Iterable {
+public class CustomLinkedList<T> implements Iterable<T> {
 
     /* Written by: Tommy Condon */
 
@@ -59,10 +59,6 @@ public class CustomLinkedList<T> implements Iterable {
         while(temp!=null){
             list += "(" + (indexOf(temp.getContentsOfNode())) + ") " + temp.getContentsOfNode().toString()+"\n";
             temp = temp.getNext();
-        }
-
-        if(list.isEmpty()){
-            return "No elements in this list";
         }
         return list;
     }

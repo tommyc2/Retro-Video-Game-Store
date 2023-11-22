@@ -13,8 +13,8 @@ public class GameMachine {
     private double price;
     private String URL;
 
-    private HashTable<Game> games = new HashTable<>(100);
-    private HashTable<GamePort> gamePorts = new HashTable<>(100);
+    private HashTable<Game> games = new HashTable<>(97);
+    private HashTable<GamePort> portedGames = new HashTable<>(97);
 
     public GameMachine(String name, String manufacturer, String description, String type, String media, int initialLaunchYear, double price, String URL) {
         setName(name);
@@ -29,7 +29,9 @@ public class GameMachine {
 
     //TODO
     public String listGamesInGameMachine(){
-        return games.listTableElements();
+        String listOfGamesInMachine = games.listTableElements();
+        if(listOfGamesInMachine.isEmpty()) return "No games in machine";
+        return listOfGamesInMachine;
     }
 
     //TODO
@@ -40,7 +42,7 @@ public class GameMachine {
 
     //TODO
     public String listGamePortsForMachine(){
-        return gamePorts.listTableElements();
+        return portedGames.listTableElements();
     }
 
     public String getName() {

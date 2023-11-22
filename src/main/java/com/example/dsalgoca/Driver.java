@@ -1,8 +1,7 @@
-package com.example.dsalgoca2;
+package com.example.dsalgoca;
 
 
 import controller.SystemAPI;
-import java.io.IOException;
 /*
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +29,6 @@ public class Driver /* extends Application */ {
 
     public Driver(){
         // launch();
-    System.out.print((int) Math.random());
+    System.out.println("Hello");
     }
 }
