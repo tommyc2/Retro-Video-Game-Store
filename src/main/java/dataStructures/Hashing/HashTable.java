@@ -49,7 +49,6 @@ public class HashTable<T> {
 
     }
 
-
     public T getByIndexID(int id){
         if(hashTable[id]!=null){
             return hashTable[id];
@@ -57,7 +56,8 @@ public class HashTable<T> {
         return null;
     }
 
-    /* public int indexOf(T c){
+
+    public int indexOf(T c){
         for(int i = 0; i < hashTable.length; i++){
             if(hashTable[i]!=null){
                 if(hashTable[i].equals(c)){
@@ -67,5 +67,7 @@ public class HashTable<T> {
         }
         return -1;
     }
-*/
+
 }
+
+

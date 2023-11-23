@@ -67,4 +67,21 @@ public class CustomLinkedList<T> implements Iterable<T> {
     public Iterator<T> iterator() {
         return new CustomLinkedListIterator<T>(head);
     }
+
+    public void remove(int index) {
+        Node<T> temp = head;
+
+        if (index==0){
+            head=head.next;
+        }
+
+        int i = 0;
+        while(i<index-1 && temp!=null) {
+            temp = temp.next;
+            i++;
+        }
+        if(temp!=null && temp.next!=null) {
+            temp.next=temp.next.next;
+        }
+    }
 }

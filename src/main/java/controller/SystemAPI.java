@@ -2,6 +2,7 @@ package controller;
 import model.Game;
 import model.GameMachine;
 import dataStructures.CustomLinkedList.*;
+import utils.Utilities;
 
 public class SystemAPI {
 
@@ -29,6 +30,32 @@ public class SystemAPI {
         return false;
     }
     public void addGamePort(){}
+
+    public boolean updateMachine(GameMachine updatedDetails, int indexOfMachine){
+        GameMachine machineToUpdate = gameMachines.get(indexOfMachine);
+
+        if(machineToUpdate!=null){
+            machineToUpdate = updatedDetails;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean deleteGameMachine(int indexOfMachine){
+        if(Utilities.isValidIndex(gameMachines,indexOfMachine)){
+            gameMachines.remove(indexOfMachine);
+            return true;
+        }
+        return false;
+    }
+
+    //TODO - CRUD
+    /*
+    public boolean deleteGame(){}
+    public boolean deleteGamePort(){}
+    public boolean updateGame(){}
+    public boolean updateGamePort(){}
+    */
 
 
     //-----------------\\
