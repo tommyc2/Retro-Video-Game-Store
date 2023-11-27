@@ -13,8 +13,11 @@ public class GameMachine {
     private double price;
     private String URL;
 
-    private HashTable<Game> games = new HashTable<>(97);
-    private HashTable<GamePort> portedGames = new HashTable<>(97);
+    // Taking in machine Name
+    private HashTable<String,OriginalGame> games = new HashTable<>(97);
+
+    // Taking in game title
+    private HashTable<String,GamePort> portedGames = new HashTable<>(97);
 
     public GameMachine(String name, String manufacturer, String description, String type, String media, int initialLaunchYear, double price, String URL) {
         setName(name);
@@ -35,9 +38,13 @@ public class GameMachine {
     }
 
     //TODO
-    public void addGame(Game newGame) {
-     //   int key = Math.random()%games.
-     //   games.add()
+    public void addGame(OriginalGame newGame) {
+        String key = newGame.getTitle();
+        games.add(key,newGame);
+    }
+
+    public OriginalGame removeGame(OriginalGame game){
+        return games.remove(game);
     }
 
     //TODO

@@ -1,5 +1,5 @@
 package controller;
-import model.Game;
+import model.OriginalGame;
 import model.GameMachine;
 import dataStructures.CustomLinkedList.*;
 import utils.Utilities;
@@ -20,7 +20,7 @@ public class SystemAPI {
         gameMachines.add(newGameMachine);
     }
 
-    public boolean addGameToMachine(String machineName, Game newGame){
+    public boolean addGameToMachine(String machineName, OriginalGame newGame){
         for(GameMachine gameMachine : gameMachines){
             if (gameMachine.getName().contains(machineName)){
                 gameMachine.addGame(newGame);
@@ -50,12 +50,15 @@ public class SystemAPI {
     }
 
     //TODO - CRUD
-    /*
-    public boolean deleteGame(){}
-    public boolean deleteGamePort(){}
+
+    //public OriginalGame deleteGame(OriginalGame game){
+    //}
+    /*public boolean deleteGamePort(){}
     public boolean updateGame(){}
     public boolean updateGamePort(){}
     */
+
+
 
 
     //-----------------\\
@@ -69,6 +72,7 @@ public class SystemAPI {
     }
 
     public String listAllGames(){
+        // sort games
         String list = "";
         for(GameMachine gameMachine : gameMachines){
             list += gameMachine.listGamesInGameMachine() + "\n";
@@ -76,6 +80,12 @@ public class SystemAPI {
         if(list.isEmpty()) return "No games added";
         return list;
     }
+
+    /*public String listAllGamesWithGamePorts(){
+
+    }
+    */
+
 
 
 }

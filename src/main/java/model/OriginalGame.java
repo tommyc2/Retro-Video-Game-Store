@@ -2,7 +2,7 @@ package model;
 
 import utils.Utilities;
 
-public class Game {
+public class OriginalGame {
 
     private String title;
 
@@ -16,7 +16,7 @@ public class Game {
 
     private String URL;
 
-    public Game(String title, String publisher, String description, String orginalDeveloper, int yearReleased, String coverArtURL) {
+    public OriginalGame(String title, String publisher, String description, String orginalDeveloper, int yearReleased, String coverArtURL) {
         setTitle(title);
         setPublisher(publisher);
         setDescription(description);
@@ -24,7 +24,6 @@ public class Game {
         setYearReleased(yearReleased);
         setURL(coverArtURL);
     }
-
     public String getTitle() {
         return title;
     }
@@ -96,7 +95,7 @@ public class Game {
 
     @Override
     public java.lang.String toString() {
-        return "Game " +
+        return "OriginalGame " +
                 "title='" + title + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", description='" + description + '\'' +
