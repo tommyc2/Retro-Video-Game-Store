@@ -3,7 +3,8 @@ package model;
 import dataStructures.Hashing.HashTable;
 import utils.Utilities;
 
-public class GameMachine {
+public class
+GameMachine {
     private String name;
     private String manufacturer;
     private String description;
@@ -13,8 +14,11 @@ public class GameMachine {
     private double price;
     private String URL;
 
-    private HashTable<Game> games = new HashTable<>(97);
-    private HashTable<GamePort> portedGames = new HashTable<>(97);
+    // Taking in machine Name
+    private HashTable<String,OriginalGame> games = new HashTable<>(97);
+
+    // Taking in game title
+    private HashTable<String,GamePort> portedGames = new HashTable<>(97);
 
     public GameMachine(String name, String manufacturer, String description, String type, String media, int initialLaunchYear, double price, String URL) {
         setName(name);
@@ -27,17 +31,34 @@ public class GameMachine {
         setURL(URL);
     }
 
-    //TODO
     public String listGamesInGameMachine(){
         String listOfGamesInMachine = games.listTableElements();
         if(listOfGamesInMachine.isEmpty()) return "No games in machine";
         return listOfGamesInMachine;
     }
 
-    //TODO
-    public void addGame(Game newGame) {
-     //   int key = Math.random()%games.
-     //   games.add()
+    public void addGame(OriginalGame newGame) {
+        String key = newGame.getTitle();
+        games.add(key,newGame);
+    }
+
+    public boolean removeGame(int indexOfGame){
+        return games.remove(indexOfGame);
+    }
+
+    public boolean updateGame(OriginalGame updatedDetailsOfGame, int index){
+        OriginalGame foundGame = games.getByIndex(index);
+
+        if(foundGame!=null){
+            foundGame.setDescription(updatedDetailsOfGame.getDescription());
+            foundGame.setPublisher(updatedDetailsOfGame.getPublisher());
+            foundGame.setTitle(updatedDetailsOfGame.getTitle());
+            foundGame.setURL(updatedDetailsOfGame.getURL());
+            foundGame.setYearReleased(updatedDetailsOfGame.getYearReleased());
+            foundGame.setOrginalDeveloper(updatedDetailsOfGame.getOrginalDeveloper());
+            return true;
+        }
+        return false;
     }
 
     public void addGamePort(GamePort newPort){
