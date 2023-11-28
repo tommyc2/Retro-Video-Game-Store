@@ -8,11 +8,12 @@ public class CustomLinkedList<T> implements Iterable<T> {
 
     public Node<T> head=null;
 
-    public void add(T c){
+    public boolean add(T c){
         Node<T> newNode = new Node<T>();
         newNode.setContents(c);
         newNode.next = head;
         head = newNode;
+        return false;
     }
 
     public T get(int index){

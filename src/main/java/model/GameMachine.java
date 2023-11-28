@@ -40,6 +40,10 @@ public class GameMachine {
      //   games.add()
     }
 
+    public void addGamePort(GamePort newPort){
+
+    }
+
     //TODO
     public String listGamePortsForMachine(){
         return portedGames.listTableElements();
