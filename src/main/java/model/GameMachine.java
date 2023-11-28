@@ -3,7 +3,8 @@ package model;
 import dataStructures.Hashing.HashTable;
 import utils.Utilities;
 
-public class GameMachine {
+public class
+GameMachine {
     private String name;
     private String manufacturer;
     private String description;
@@ -30,21 +31,34 @@ public class GameMachine {
         setURL(URL);
     }
 
-    //TODO
     public String listGamesInGameMachine(){
         String listOfGamesInMachine = games.listTableElements();
         if(listOfGamesInMachine.isEmpty()) return "No games in machine";
         return listOfGamesInMachine;
     }
 
-    //TODO
     public void addGame(OriginalGame newGame) {
         String key = newGame.getTitle();
         games.add(key,newGame);
     }
 
-    public OriginalGame removeGame(OriginalGame game){
-        return games.remove(game);
+    public boolean removeGame(int indexOfGame){
+        return games.remove(indexOfGame);
+    }
+
+    public boolean updateGame(OriginalGame updatedDetailsOfGame, int index){
+        OriginalGame foundGame = games.getByIndex(index);
+
+        if(foundGame!=null){
+            foundGame.setDescription(updatedDetailsOfGame.getDescription());
+            foundGame.setPublisher(updatedDetailsOfGame.getPublisher());
+            foundGame.setTitle(updatedDetailsOfGame.getTitle());
+            foundGame.setURL(updatedDetailsOfGame.getURL());
+            foundGame.setYearReleased(updatedDetailsOfGame.getYearReleased());
+            foundGame.setOrginalDeveloper(updatedDetailsOfGame.getOrginalDeveloper());
+            return true;
+        }
+        return false;
     }
 
     //TODO

@@ -80,14 +80,16 @@ public class HashTable<K,T> {
     }
 
 
-    public T remove(T obj){
+    public boolean remove(int index){
         for(int i = 0; i < hashTable.length; i++){
-            if (hashTable[i].equals(obj)){
+            if (i==index){
                 hashTable[i] = null;
-                return obj;
+                keys[i] = null; // Asssuming loc is the same for key pair
+                return true;
             }
         }
-        return null;
+        return false;
     }
+
 
 }
