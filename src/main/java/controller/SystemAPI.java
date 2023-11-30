@@ -95,7 +95,7 @@ public class SystemAPI {
     // Listing/Searching \\
     //-----------------\\
 
-    public String listAllMachines() {
+    public String listAllMachines(){
         // sort Machines
         String listOfMachines = gameMachines.listElements();
         if (listOfMachines.isEmpty()) return "No machines added";
