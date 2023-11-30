@@ -61,6 +61,15 @@ GameMachine {
         return false;
     }
 
+    public void addGamePort(GamePort newPort){
+
+    }
+
+    //TODO
+    public String listGamePortsForMachine(){
+        return portedGames.listTableElements();
+    }
+
     public String getName() {
         return name;
     }
@@ -68,9 +77,6 @@ GameMachine {
     public void setName(String name) {
         if (Utilities.validStringlength(name,20)){
         this.name = name;
-        }
-        else {
-            this.name = Utilities.truncateString(name,20);
         }
     }
 
