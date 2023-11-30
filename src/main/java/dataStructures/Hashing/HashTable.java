@@ -79,6 +79,10 @@ public class HashTable<K,T> {
         return null;
     }
 
+    public int size(){
+     return hashTable.length;
+    }
+
 
     public boolean remove(int index){
         for(int i = 0; i < hashTable.length; i++){

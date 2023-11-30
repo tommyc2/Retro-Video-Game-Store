@@ -1,4 +1,6 @@
-import model.Game;
+package test;
+
+import model.OriginalGame;
 import model.GameMachine;
 import model.GamePort;
 import org.junit.jupiter.api.BeforeEach;
@@ -128,7 +130,7 @@ public class GameMachineTest {
         assertEquals("No games in machine", gameMachine.listGamesInGameMachine());
 
         // Add a game to the machine
-        Game game = new Game("TestGame", "TestDeveloper", "TestGenre", "TestPlayer", 2022, "http://game-url.com");
+        OriginalGame game = new OriginalGame("TestGame", "TestDeveloper", "TestGenre", "TestPlayer", 2022, "http://game-url.com");
         gameMachine.addGame(game);
 
         // Check if the game is listed
@@ -141,7 +143,7 @@ public class GameMachineTest {
         assertEquals("No games in machine", gameMachine.listGamesInGameMachine());
 
         // Add a game to the machine
-        Game game = new Game("TestGame", "TestDeveloper", "TestGenre", "TestPlayer", 2022, "http://game-url.com");
+        OriginalGame game = new OriginalGame("TestGame", "TestDeveloper", "TestGenre", "TestPlayer", 2022, "http://game-url.com");
         gameMachine.addGame(game);
 
         // Check if the game is added successfully
@@ -154,8 +156,8 @@ public class GameMachineTest {
         assertEquals("", gameMachine.listGamePortsForMachine());
 
         // Add a game port to the machine
-        GamePort gamePort = new GamePort("USB", 2002,"URL");
-        gameMachine.addGamePort(gamePort);
+      //  GamePort gamePort = new GamePort("USB", 2002,"URL");
+       // gameMachine.addGamePort(gamePort);
 
         // Check if the game port is listed
         assertTrue(gameMachine.listGamePortsForMachine().contains("USB"));

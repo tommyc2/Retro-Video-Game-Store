@@ -1,7 +1,8 @@
+package test;
 
 import controller.SystemAPI;
-import model.Game;
 import model.GameMachine;
+import model.OriginalGame;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,7 +35,7 @@ import static org.junit.jupiter.api.Assertions.*;
             systemAPI.addMachine(newGameMachine);
 
             // Add a new game to the machine
-            Game newGame = new Game("TestGame", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://game-cover-art.com");
+            OriginalGame newGame = new OriginalGame("TestGame", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://game-cover-art.com");
             assertTrue(systemAPI.addGameToMachine("TestMachine", newGame));
 
             // Verify that the game is added to the machine

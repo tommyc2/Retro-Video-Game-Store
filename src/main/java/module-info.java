@@ -1,6 +1,7 @@
 module com.example.dsalgoca {
     requires javafx.fxml;
     requires javafx.controls;
+    requires org.junit.jupiter.api;
 
 
     opens com.example.dsalgoca to javafx.fxml;

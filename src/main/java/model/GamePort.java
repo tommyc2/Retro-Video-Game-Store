@@ -4,23 +4,11 @@ public class GamePort {
     private String gamePortDeveloper = "";
     private int releaseYear = 2023;
     private String coverArtImageURL = "";
-    private OriginalGame gameBeingPorted;
-    private GameMachine newMachine;
 
-    public GamePort(GameMachine newMachine, OriginalGame gameBeingPorted, String gamePortDeveloper, int releaseYear, String coverArtImageURL) {
+    public GamePort(String gamePortDeveloper, int releaseYear, String coverArtImageURL) {
         setGamePortDeveloper(gamePortDeveloper);
         setReleaseYear(releaseYear);
         setCoverArtImageURL(coverArtImageURL);
-        this.gameBeingPorted = gameBeingPorted;
-        setGameMachine(newMachine);
-    }
-
-    private void setGameMachine(GameMachine newMachine) {
-        this.newMachine = newMachine;
-    }
-
-    public OriginalGame getOriginalGame(){
-        return gameBeingPorted;
     }
 
     public String getGamePortDeveloper() {

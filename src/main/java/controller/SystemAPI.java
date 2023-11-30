@@ -1,5 +1,6 @@
 package controller;
 import dataStructures.Hashing.HashTable;
+import model.GamePort;
 import model.OriginalGame;
 import model.GameMachine;
 import dataStructures.CustomLinkedList.*;
@@ -16,7 +17,6 @@ public class SystemAPI {
     //-----------------\\
     //     CRUD        \\
     //-----------------\\
-
 
     public boolean addGameToMachine(String machineName, OriginalGame newGame) {
         for (GameMachine gameMachine : gameMachines) {
@@ -50,12 +50,24 @@ public class SystemAPI {
     }
 
     /* GAME PORT CRUD */
-    public void addGamePort() {
-    }
-
-    public boolean deleteGamePort() {
+    public boolean addGamePort(String machineName, String gameTitle, GamePort newGamePort){
+        for(GameMachine gameMachine : gameMachines){
+            if (gameMachine.getName().contains(machineName)){
+                if(gameMachine.listGamesInGameMachine().contains(gameTitle)){
+                    return gameMachine.addGamePort(gameTitle,newGamePort);
+                }
+            }
+        }
         return false;
     }
+
+    //public boolean deleteGamePort(String machineName, int indexOfGamePort) {
+    //    for(GameMachine gameMachine : gameMachines){
+     //       if(gameMachine.getName().contains(machineName){
+     //        gameMachine.removeGamePort
+     //       }
+    //    }
+    //}
 
     public boolean updateGamePort() {
         return false;
@@ -111,14 +123,6 @@ public class SystemAPI {
         if (list.isEmpty()) return "No games added";
         return list;
     }
-
-
-    /*
-
-    public String listAllGamesWithGamePorts(){
-
-    }
-    */
 
     //-----------------\\
     //    Sorting/Swap      \\

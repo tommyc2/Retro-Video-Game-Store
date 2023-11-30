@@ -42,6 +42,15 @@ GameMachine {
         games.add(key,newGame);
     }
 
+    public boolean addGamePort(String gameTitle, GamePort gamePort) {
+        if(games.getValuePair(gameTitle)!=null){
+            boolean isAdded =  portedGames.add(gameTitle,gamePort);
+            if (isAdded) return true;
+            return false;
+        }
+        return false;
+    }
+
     public boolean removeGame(int indexOfGame){
         return games.remove(indexOfGame);
     }
@@ -61,14 +70,17 @@ GameMachine {
         return false;
     }
 
-    public void addGamePort(GamePort newPort){
-
-    }
 
     //TODO
     public String listGamePortsForMachine(){
         return portedGames.listTableElements();
     }
+
+    //public String listAllGamesWithGamePorts(){
+    //    String list = "";
+     //
+     //   for(int i = 0; i < games.)
+    //}
 
     public String getName() {
         return name;
@@ -158,6 +170,7 @@ GameMachine {
         }
     }
 
+
     @Override
     public String toString() {
         return "GameMachine { " +
@@ -171,4 +184,6 @@ GameMachine {
                 ", URL='" + URL + '\'' +
                 '}';
     }
+
+
 }
