@@ -84,4 +84,6 @@ public class CustomLinkedList<T> implements Iterable<T> {
             temp.next=temp.next.next;
         }
     }
+
+
 }

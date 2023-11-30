@@ -2,6 +2,7 @@ package com.example.dsalgoca;
 
 
 import controller.SystemAPI;
+import model.GameMachine;
 /*
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +30,18 @@ public class Driver /* extends Application */ {
 
     public Driver(){
         // launch();
-    System.out.println("Hello");
+        GameMachine gameMachine = new GameMachine("Xbox","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
+        GameMachine gameMachine1 = new GameMachine("Playstation12","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
+        GameMachine gameMachine2 = new GameMachine("Playstation12312","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
+        GameMachine gameMachine3 = new GameMachine("Playstation1321312","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
+
+        systemAPI.addMachine(gameMachine);
+        systemAPI.addMachine(gameMachine1);
+        systemAPI.addMachine(gameMachine2);
+        systemAPI.addMachine(gameMachine3);
+
+        System.out.println(systemAPI.sortMachinesByNameAscending());
+
+
     }
 }
