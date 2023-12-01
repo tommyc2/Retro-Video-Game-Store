@@ -15,11 +15,19 @@ GameMachine {
     private double price;
     private String URL;
 
-    // Taking in machine Name
-    private HashTable<String,OriginalGame> games = new HashTable<>(97);
+    // Taking in game title as key
+    private HashTable<String,OriginalGame> games = new HashTable<>(97); // prime number
 
     // Taking in game title
-    private HashTable<String,GamePort> portedGames = new HashTable<>(97);
+    private HashTable<String,GamePort> portedGames = new HashTable<>(97); // prime number
+
+    public HashTable<String, OriginalGame> getGames() {
+        return this.games;
+    }
+
+    public HashTable<String, GamePort> getPortedGames() {
+        return this.portedGames;
+    }
 
     public GameMachine(String name, String manufacturer, String description, String type, String media, int initialLaunchYear, double price, String URL) {
         setName(name);
@@ -44,12 +52,16 @@ GameMachine {
     }
 
     public boolean addGamePort(String gameTitle, GamePort gamePort) {
+        /*
         if(games.getValuePair(gameTitle)!=null){
             boolean isAdded =  portedGames.add(gameTitle,gamePort);
             if (isAdded) return true;
             return false;
         }
         return false;
+
+         */
+        return portedGames.add(gameTitle,gamePort);
     }
 
     public boolean removeGame(int indexOfGame){
@@ -71,17 +83,9 @@ GameMachine {
         return false;
     }
 
-
-    //TODO
-    public String listGamePortsForMachine(){
+    public String listPortedGamesForMachine(){
         return portedGames.listTableElements();
     }
-
-    //public String listAllGamesWithGamePorts(){
-    //    String list = "";
-     //
-     //   for(int i = 0; i < games.)
-    //}
 
     public String getName() {
         return name;

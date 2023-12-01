@@ -8,8 +8,8 @@ public class HashTable<K,T> {
     /* Uses primitive array to store objects of a specified type */
     /* Written by: Tommy Condon */
     /* Open Addressing */
-    T[] hashTable;
-    K[] keys;
+    private T[] hashTable;
+    private K[] keys;
 
     public HashTable(int size){
         hashTable = (T[]) new Object[size];
@@ -52,7 +52,7 @@ public class HashTable<K,T> {
             else{
                 location = (location+1) % keys.length;
             }
-        } while(startLoc!=location);
+        } while(location!=startLoc);
 
         return null;
     }

@@ -33,22 +33,25 @@ public class Driver /* extends Application */ {
 
     public Driver(){
         // launch();
-        GameMachine gameMachine = new GameMachine("Xbox","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
-        GameMachine gameMachine1 = new GameMachine("Playstation12","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
-        GameMachine gameMachine2 = new GameMachine("Playstation12312","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
-        GameMachine gameMachine3 = new GameMachine("Playstation1321312","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
+        GameMachine xbox = new GameMachine("Xbox","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
+        GameMachine playstation2 = new GameMachine("Playstation2","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
 
-        OriginalGame game1 = new OriginalGame("Zelda", "publisher", "desc", "origDev", 2023,"www");
+        systemAPI.addMachine(xbox);
+        systemAPI.addMachine(playstation2);
 
-        GamePort gamePort = new GamePort("developer", 2023,"urlexample");
+        OriginalGame zeldaGame = new OriginalGame("Zelda", "publisher", "desc", "origDev", 2023,"www");
+        OriginalGame gtaGame = new OriginalGame("GTA 5", "publisher", "desc", "origDev", 2023,"www");
 
-        gameMachine1.addGame(game1);
-        gameMachine1.addGamePort("Zelda",gamePort);
+        GamePort gamePort1 = new GamePort(zeldaGame, "zeldamakers",2023,"urlexample");
+        GamePort gamePort2 = new GamePort(gtaGame, "gtadevs",2023,"urlexample");
 
-        System.out.println(gameMachine1.listGamesInGameMachine());
-        System.out.println("Game Ports for game" + gameMachine1.listGamePortsForMachine());
-        //systemAPI.addMachine(gameMachine);
-       // systemAPI.addMachine(gameMachine1);
+        xbox.addGame(zeldaGame);
+
+        playstation2.addGame(gtaGame);
+        playstation2.addGamePort("Zelda",gamePort1);
+
+        System.out.println(systemAPI.listGamesAndPortedGames());
+
         //systemAPI.addMachine(gameMachine2);
        // systemAPI.addMachine(gameMachine3);
 /*

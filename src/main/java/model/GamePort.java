@@ -5,10 +5,13 @@ public class GamePort {
     private int releaseYear = 2023;
     private String coverArtImageURL = "";
 
-    public GamePort(String gamePortDeveloper, int releaseYear, String coverArtImageURL) {
+    private OriginalGame originalGame;
+
+    public GamePort(OriginalGame game,String gamePortDeveloper, int releaseYear, String coverArtImageURL) {
         setGamePortDeveloper(gamePortDeveloper);
         setReleaseYear(releaseYear);
         setCoverArtImageURL(coverArtImageURL);
+        this.originalGame = game;
     }
 
     public String getGamePortDeveloper() {
@@ -38,10 +41,10 @@ public class GamePort {
 
     @Override
     public String toString() {
-        return "GamePort {" +
-                "gamePortDeveloper = '" + gamePortDeveloper + '\'' +
+        return "GamePort {" + "original Game: " + originalGame +
+                ", gamePortDeveloper = " + gamePortDeveloper +
                 ", releaseYear = " + releaseYear +
-                ", coverArtImageURL = '" + coverArtImageURL + '\'' +
+                ", coverArtImageURL = " + coverArtImageURL +
                 '}';
     }
 }

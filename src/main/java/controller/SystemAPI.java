@@ -50,12 +50,11 @@ public class SystemAPI {
     }
 
     /* GAME PORT CRUD */
-    public boolean addGamePort(String machineName, String gameTitle, GamePort newGamePort){
+    public boolean addGamePort(String portedToMachineName, String gameTitle, GamePort newGamePort){
+        // allowing game ports to be added for games that do not exist for now
         for(GameMachine gameMachine : gameMachines){
-            if (gameMachine.getName().contains(machineName)){
-                if(gameMachine.listGamesInGameMachine().contains(gameTitle)){
-                    return gameMachine.addGamePort(gameTitle,newGamePort);
-                }
+            if (gameMachine.getName().contains(portedToMachineName)){
+                return gameMachine.addGamePort(gameTitle,newGamePort);
             }
         }
         return false;
@@ -123,6 +122,59 @@ public class SystemAPI {
         if (list.isEmpty()) return "No games added";
         return list;
     }
+
+    public String listGamesAndPortedGames(){
+        String listOfGamesWithPortedGameVersions = "";
+
+        for(GameMachine gameMachine : gameMachines){
+            listOfGamesWithPortedGameVersions += "(Machine: " + gameMachine.getName() + ")\n" + gameMachine.listGamesInGameMachine() + "\n"
+                    + "(Ported Games)\n" + gameMachine.listPortedGamesForMachine() + "\n";
+        }
+
+        if(listOfGamesWithPortedGameVersions.isEmpty()){
+            return "No games/ports. Please add some";
+        }
+        return listOfGamesWithPortedGameVersions;
+    }
+
+    /*
+
+                                        Come back to this at later stage
+
+    public String listOfGamesWithGamePorts() {
+        String listOfGamesWithPortedGameVersions = "";
+
+        for (GameMachine gameMachine : gameMachines)
+        {
+            if (gameMachine.getGames().size() > 0)
+            {
+                listOfGamesWithPortedGameVersions += "(Machine: " + gameMachine.getName() + " )\n";
+                for (int i = 0; i < gameMachine.getGames().size(); i++)
+                {
+                    if (gameMachine.getGames().getByIndex(i) != null)
+                    {
+                        OriginalGame game = gameMachine.getGames().getByIndex(i);
+                        listOfGamesWithPortedGameVersions += "*** (Original Game) ==> " + game + "\n";
+
+                        // ---------------------------------------- \\
+                        for (GameMachine gameMachine1 : gameMachines)
+                        {
+                            if (gameMachine1.getPortedGames().listTableElements().contains(game.toString()))
+                            {
+                                listOfGamesWithPortedGameVersions += "(Ported Game): " + gameMachine1.getPortedGames().getValuePair(game.getTitle()) + "\n";
+                            }
+                        }
+                        // ---------------------------------------- \\
+
+                    }
+                }
+                listOfGamesWithPortedGameVersions += "(Machine: " + gameMachine.getName() + " )\n" + "No Games/Ports for this machine" + "\n\n";
+            }
+
+        }
+        return listOfGamesWithPortedGameVersions;
+    }
+    */
 
     //-----------------\\
     //    Sorting/Swap      \\
