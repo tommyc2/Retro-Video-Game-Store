@@ -5,6 +5,7 @@ import utils.Utilities;
 
 public class
 GameMachine {
+
     private String name;
     private String manufacturer;
     private String description;
