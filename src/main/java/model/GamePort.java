@@ -14,6 +14,10 @@ public class GamePort {
         this.originalGame = game;
     }
 
+    public OriginalGame getOriginalGame() {
+        return originalGame;
+    }
+
     public String getGamePortDeveloper() {
         return gamePortDeveloper;
     }
@@ -41,7 +45,7 @@ public class GamePort {
 
     @Override
     public String toString() {
-        return "GamePort {" + "original Game: " + originalGame +
+        return "GamePort {" + "original Game: " + originalGame + " }" +
                 ", gamePortDeveloper = " + gamePortDeveloper +
                 ", releaseYear = " + releaseYear +
                 ", coverArtImageURL = " + coverArtImageURL +

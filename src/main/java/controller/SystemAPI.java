@@ -13,6 +13,9 @@ public class SystemAPI {
     public SystemAPI() {
     }
 
+    public CustomLinkedList<GameMachine> getGameMachines() {
+        return gameMachines;
+    }
 
     //-----------------\\
     //     CRUD        \\
@@ -41,8 +44,8 @@ public class SystemAPI {
     public boolean updateGame(OriginalGame updatedGameObj, String machineName, int indexOfGameToUpdate) {
         for (GameMachine gameMachine : gameMachines) {
             if (gameMachine.getName().contains(machineName)) {
-                boolean isDeleted = gameMachine.updateGame(updatedGameObj, indexOfGameToUpdate);
-                if (isDeleted) return true;
+                boolean isUpdated = gameMachine.updateGame(updatedGameObj, indexOfGameToUpdate);
+                if (isUpdated) return true;
                 return false;
             }
         }
@@ -105,6 +108,20 @@ public class SystemAPI {
     //-----------------\\
     // Listing/Searching \\
     //-----------------\\
+
+    public String searchForGameTitle(String searchGameTitle){
+        String listOfSearchResults = "";
+        for(GameMachine gameMachine : gameMachines){
+            if(gameMachine.getGames().getValuePair(searchGameTitle)!=null){
+                listOfSearchResults += gameMachine.getGames().getValuePair(searchGameTitle).toString() + "\n";
+            }
+            if(gameMachine.getPortedGames().getValuePair(searchGameTitle)!=null){
+                listOfSearchResults += gameMachine.getPortedGames().getValuePair(searchGameTitle).toString() + "\n";
+            }
+        }
+        if(listOfSearchResults.isEmpty()) return "Couldn't find game by that title. Please try again.";
+        return listOfSearchResults;
+    }
 
     public String listAllMachines(){
         // sort Machines
@@ -195,11 +212,6 @@ public class SystemAPI {
         return sortedList;
     }
 
-    public void sortGamesByTitleDescending(){
-        for(GameMachine gameMachine : gameMachines){
-
-        }
-    }
 }
 
 

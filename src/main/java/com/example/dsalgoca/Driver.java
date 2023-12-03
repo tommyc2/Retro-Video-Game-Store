@@ -2,7 +2,6 @@ package com.example.dsalgoca;
 
 
 import controller.SystemAPI;
-import dataStructures.Hashing.HashTable;
 import model.GameMachine;
 import model.GamePort;
 import model.OriginalGame;
@@ -39,25 +38,39 @@ public class Driver /* extends Application */ {
         systemAPI.addMachine(xbox);
         systemAPI.addMachine(playstation2);
 
-        OriginalGame zeldaGame = new OriginalGame("Zelda", "publisher", "desc", "origDev", 2023,"www");
-        OriginalGame gtaGame = new OriginalGame("GTA 5", "publisher", "desc", "origDev", 2023,"www");
+        OriginalGame zeldaGame = new OriginalGame("Zelda", "publisher", "desc", "origDev", 2019,"www");
+        OriginalGame gtaGame = new OriginalGame("GTA 5", "publisher", "desc", "origDev", 2021,"www");
+        OriginalGame minecraft = new OriginalGame("Minecraft", "publisher", "desc", "origDev", 2008,"www");
+        OriginalGame pokemon = new OriginalGame("Pokemon", "publisher", "desc", "origDev", 2023,"www");
+        OriginalGame ufc = new OriginalGame("UFC", "publisher", "desc", "origDev", 2003,"www");
+        OriginalGame fifa = new OriginalGame("Fifa", "publisher", "desc", "origDev", 2007,"www");
+        OriginalGame diablo = new OriginalGame("Diablo", "publisher", "desc", "origDev", 2020,"www");
 
-        GamePort gamePort1 = new GamePort(zeldaGame, "zeldamakers",2023,"urlexample");
-        GamePort gamePort2 = new GamePort(gtaGame, "gtadevs",2023,"urlexample");
+        GamePort gamePortZelda = new GamePort(zeldaGame, "zeldamakers",2019,"urlexample");
+        GamePort gamePortGTA = new GamePort(gtaGame, "gtadevs",2021,"urlexample");
+        GamePort gamePortMinecraft = new GamePort(minecraft, "zeldamakers",2008,"urlexample");
+        GamePort gamePortPokemon = new GamePort(pokemon, "gtadevs",2023,"urlexample");
 
         xbox.addGame(zeldaGame);
+        xbox.addGame(gtaGame);
+        xbox.addGame(minecraft);
+        xbox.addGame(pokemon);
+        xbox.addGame(ufc);
+        xbox.addGame(diablo);
+        xbox.addGame(fifa);
 
-        playstation2.addGame(gtaGame);
-        playstation2.addGamePort("Zelda",gamePort1);
+        playstation2.addGamePort("Zelda", gamePortZelda);
+        playstation2.addGamePort("GTA 5", gamePortGTA);
+        playstation2.addGamePort("Minecraft", gamePortMinecraft);
+        playstation2.addGamePort("Pokemon", gamePortPokemon);
 
-        System.out.println(systemAPI.listGamesAndPortedGames());
+        //String foundGameTitle = systemAPI.searchForGameTitle("UFC");
+        //System.out.println(foundGameTitle);
 
-        //systemAPI.addMachine(gameMachine2);
-       // systemAPI.addMachine(gameMachine3);
-/*
-        System.out.println(systemAPI.sortMachinesByNameAscending());
+        //playstation2.addGame(gtaGame);
+        //playstation2.addGamePort("Zelda",gamePort1);
 
-         */
+        //System.out.println(systemAPI.listGamesAndPortedGames());
 
     }
 }

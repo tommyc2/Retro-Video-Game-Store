@@ -88,11 +88,16 @@ public class HashTable<K,T> {
         for(int i = 0; i < hashTable.length; i++){
             if (i==index){
                 hashTable[i] = null;
-                keys[i] = null; // Asssuming loc is the same for key pair
                 return true;
             }
         }
         return false;
+    }
+
+    public void swapElements(int startingPoint, int smallestIndex){
+        T swap=hashTable[startingPoint];
+        hashTable[startingPoint]=hashTable[smallestIndex];
+        hashTable[smallestIndex]=swap;
     }
 
 

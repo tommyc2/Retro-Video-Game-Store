@@ -40,7 +40,85 @@ GameMachine {
         setURL(URL);
     }
 
+    public void sortGamesByYearReleasedAscending() {
+        for (int start = 0; start < games.size() - 1; start++) {
+            if (games.getByIndex(start)!=null)
+            {
+                int smallestIndex = start;
+
+                for (int i = start + 1; i < games.size(); i++) {
+                    if(games.getByIndex(i)!=null && games.getByIndex(smallestIndex)!=null)
+                    {
+                        if (games.getByIndex(i).getYearReleased() < games.getByIndex(smallestIndex).getYearReleased()) {
+                            smallestIndex = i;
+                        }
+                    }
+                }
+                games.swapElements(start, smallestIndex);
+            }
+        }
+    }
+
+    public void sortPortedGamesByYearReleasedAscending() {
+        for (int start = 0; start < portedGames.size() - 1; start++) {
+            if (portedGames.getByIndex(start)!=null)
+            {
+                int smallestIndex = start;
+
+                for (int i = start + 1; i < portedGames.size(); i++) {
+                    if(portedGames.getByIndex(i)!=null && portedGames.getByIndex(smallestIndex)!=null)
+                    {
+                        if (portedGames.getByIndex(i).getReleaseYear() < portedGames.getByIndex(smallestIndex).getReleaseYear()) {
+                            smallestIndex = i;
+                        }
+                    }
+                }
+                portedGames.swapElements(start, smallestIndex);
+            }
+        }
+    }
+
+    public void sortGamesByTitleAscending() {
+        for (int start = 0; start < games.size() - 1; start++) {
+            if (games.getByIndex(start)!=null)
+            {
+                int smallestIndex = start;
+
+                for (int i = start + 1; i < games.size(); i++) {
+                    if(games.getByIndex(i)!=null && games.getByIndex(smallestIndex)!=null)
+                    {
+                        if (games.getByIndex(i).getTitle().length() < games.getByIndex(smallestIndex).getTitle().length()) {
+                            smallestIndex = i;
+                        }
+                    }
+                }
+                games.swapElements(start, smallestIndex);
+            }
+        }
+    }
+
+    public void sortPortedGamesByGameTitleAscending() {
+        for (int start = 0; start < portedGames.size() - 1; start++) {
+            if (portedGames.getByIndex(start)!=null)
+            {
+                int smallestIndex = start;
+
+                for (int i = start + 1; i < portedGames.size(); i++) {
+                    if(portedGames.getByIndex(i)!=null && portedGames.getByIndex(smallestIndex)!=null)
+                    {
+                        if (portedGames.getByIndex(i).getOriginalGame().getTitle().length() < portedGames.getByIndex(smallestIndex).getOriginalGame().getTitle().length()) {
+                            smallestIndex = i;
+                        }
+                    }
+                }
+                portedGames.swapElements(start, smallestIndex);
+            }
+        }
+    }
+
+
     public String listGamesInGameMachine(){
+        sortGamesByYearReleasedAscending();
         String listOfGamesInMachine = games.listTableElements();
         if(listOfGamesInMachine.isEmpty()) return "No games in machine";
         return listOfGamesInMachine;
@@ -84,7 +162,10 @@ GameMachine {
     }
 
     public String listPortedGamesForMachine(){
-        return portedGames.listTableElements();
+        sortPortedGamesByYearReleasedAscending();
+        String listOfPortedGamesInMachine = portedGames.listTableElements();
+        if(listOfPortedGamesInMachine.isEmpty()) return "No ported games in machine";
+        return listOfPortedGamesInMachine;
     }
 
     public String getName() {
