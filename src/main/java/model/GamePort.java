@@ -11,7 +11,11 @@ public class GamePort {
         setGamePortDeveloper(gamePortDeveloper);
         setReleaseYear(releaseYear);
         setCoverArtImageURL(coverArtImageURL);
-        this.originalGame = game;
+        setOriginalGame(game);
+    }
+
+    public void setOriginalGame(OriginalGame originalGame) {
+        this.originalGame = originalGame;
     }
 
     public OriginalGame getOriginalGame() {

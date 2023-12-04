@@ -64,6 +64,10 @@ public class Driver /* extends Application */ {
         playstation2.addGamePort("Minecraft", gamePortMinecraft);
         playstation2.addGamePort("Pokemon", gamePortPokemon);
 
+        reset();
+        save();
+        System.out.println(systemAPI.getGameMachines().listElements());
+
         //String foundGameTitle = systemAPI.searchForGameTitle("UFC");
         //System.out.println(foundGameTitle);
 
@@ -73,4 +77,47 @@ public class Driver /* extends Application */ {
         //System.out.println(systemAPI.listGamesAndPortedGames());
 
     }
+
+    // Persistence //
+
+    private void save(){
+
+        try
+        {
+            System.out.println("Saving...");
+            systemAPI.save();
+        }
+        catch (Exception e)
+        {
+            System.err.println("Error writing to this file --> " + e);
+        }
+
+    }
+
+    private void load(){
+
+        try
+        {
+            System.out.println("Loading system....");
+            systemAPI.load();
+        }
+
+        catch (Exception e)
+        {
+            System.err.println("Error while loading --> " + e.toString());
+        }
+
+    }
+
+    private void reset(){
+        try{
+            System.out.println("Resetting current system....");
+            systemAPI.reset();
+        }
+        catch (Exception error){
+            System.err.println("Error while resetting --> " + error);
+        }
+    }
+
+
 }
