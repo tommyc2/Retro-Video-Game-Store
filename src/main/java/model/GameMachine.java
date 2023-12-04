@@ -130,20 +130,18 @@ GameMachine {
     }
 
     public boolean addGamePort(String gameTitle, GamePort gamePort) {
-        /*
-        if(games.getValuePair(gameTitle)!=null){
-            boolean isAdded =  portedGames.add(gameTitle,gamePort);
-            if (isAdded) return true;
-            return false;
+        if(games.size()>0){
+            return portedGames.add(gameTitle,gamePort);
         }
         return false;
-
-         */
-        return portedGames.add(gameTitle,gamePort);
     }
 
     public boolean removeGame(int indexOfGame){
         return games.remove(indexOfGame);
+    }
+
+    public boolean removeGamePort(int indexOfGamePort) {
+        return portedGames.remove(indexOfGamePort);
     }
 
     public boolean updateGame(OriginalGame updatedDetailsOfGame, int index){
@@ -159,6 +157,21 @@ GameMachine {
             return true;
         }
         return false;
+    }
+
+    public boolean updatePortedGame(GamePort updatedGamePort, int indexOfPortedGame) {
+        GamePort foundPortedGame = portedGames.getByIndex(indexOfPortedGame);
+
+        if(foundPortedGame!=null){
+            foundPortedGame.setGamePortDeveloper(updatedGamePort.getGamePortDeveloper());
+            foundPortedGame.setReleaseYear(updatedGamePort.getReleaseYear());
+            foundPortedGame.setCoverArtImageURL(updatedGamePort.getCoverArtImageURL());
+            foundPortedGame.setOriginalGame(updatedGamePort.getOriginalGame());
+            return true;
+        }
+        return false;
+
+
     }
 
     public String listPortedGamesForMachine(){
@@ -270,6 +283,4 @@ GameMachine {
                 ", URL='" + URL + '\'' +
                 '}';
     }
-
-
 }

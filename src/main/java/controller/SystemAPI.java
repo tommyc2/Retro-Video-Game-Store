@@ -1,10 +1,16 @@
 package controller;
-import dataStructures.Hashing.HashTable;
 import model.GamePort;
 import model.OriginalGame;
 import model.GameMachine;
 import dataStructures.CustomLinkedList.*;
 import utils.Utilities;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+import com.thoughtworks.xstream.security.AnyTypePermission;
+import java.io.*;
+
+
+
 
 public class SystemAPI {
 
@@ -54,7 +60,6 @@ public class SystemAPI {
 
     /* GAME PORT CRUD */
     public boolean addGamePort(String portedToMachineName, String gameTitle, GamePort newGamePort){
-        // allowing game ports to be added for games that do not exist for now
         for(GameMachine gameMachine : gameMachines){
             if (gameMachine.getName().contains(portedToMachineName)){
                 return gameMachine.addGamePort(gameTitle,newGamePort);
@@ -63,15 +68,23 @@ public class SystemAPI {
         return false;
     }
 
-    //public boolean deleteGamePort(String machineName, int indexOfGamePort) {
-    //    for(GameMachine gameMachine : gameMachines){
-     //       if(gameMachine.getName().contains(machineName){
-     //        gameMachine.removeGamePort
-     //       }
-    //    }
-    //}
+    public boolean deleteGamePort(String machineName, int indexOfGamePort) {
+        for(GameMachine gameMachine : gameMachines){
+            if(gameMachine.getName().contains(machineName)){
+             return gameMachine.removeGamePort(indexOfGamePort);
+            }
+        }
+        return false;
+    }
 
-    public boolean updateGamePort() {
+    public boolean updateGamePort(GamePort updatedGamePort, String machineName, int indexOfPortedGame) {
+        for (GameMachine gameMachine : gameMachines) {
+            if (gameMachine.getName().contains(machineName)) {
+                boolean isUpdated = gameMachine.updatePortedGame(updatedGamePort, indexOfPortedGame);
+                if (isUpdated) return true;
+                return false;
+            }
+        }
         return false;
     }
 
@@ -141,6 +154,7 @@ public class SystemAPI {
     }
 
     public String listGamesAndPortedGames(){
+        // sort Games and Ported Games
         String listOfGamesWithPortedGameVersions = "";
 
         for(GameMachine gameMachine : gameMachines){
@@ -194,24 +208,71 @@ public class SystemAPI {
     */
 
     //-----------------\\
-    //    Sorting/Swap      \\
+    //    Sorting      \\
     //-----------------\\
 
-    public String sortMachinesByNameAscending(){
-        String sortedList = "";
-        for(int i = 0; i < gameMachines.size()-1; i++ ){
-            int smallestIndex = i;
-            for (int j = i+1; j < gameMachines.size(); j++){
-                 if(gameMachines.get(j).getName().length() < gameMachines.get(smallestIndex).getName().length()){
-                     smallestIndex=j;
-                 }
-            }
-            GameMachine smallestGameMachine = gameMachines.get(smallestIndex);
-            sortedList += "(" + gameMachines.indexOf(smallestGameMachine) + ") "+ gameMachines.get(smallestIndex).toString() + "\n";
+    public void sortGamesByYearReleasedAscending(){
+        for(GameMachine gameMachine : gameMachines){
+            gameMachine.sortGamesByYearReleasedAscending();
         }
-        return sortedList;
+    }
+    public void sortGamesByTitleAscending(){
+        for(GameMachine gameMachine : gameMachines){
+            gameMachine.sortGamesByTitleAscending();
+        }
+    }
+    public void sortPortedGamesByYearReleasedAscending(){
+        for(GameMachine gameMachine : gameMachines){
+            gameMachine.sortPortedGamesByYearReleasedAscending();
+        }
+    }
+    public void sortPortedGamesByGameTitleAscending(){
+        for(GameMachine gameMachine : gameMachines){
+            gameMachine.sortPortedGamesByGameTitleAscending();
+        }
     }
 
+    //----------------------//
+    //   Persistence/Reset  //
+    //---------------------//
+
+    public void save() throws Exception {
+        XStream xstream = new XStream(new DomDriver());
+        ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter("retrovideogamesystem.xml"));
+
+        out.writeObject(gameMachines);
+        out.close();
+    }
+
+    @SuppressWarnings("unchecked")
+    public void load() throws Exception {
+
+        Class<?>[] classes = new Class[]{OriginalGame.class, GamePort.class, GameMachine.class};
+
+        //Creating XStream obj w/ classes
+        XStream xstream = new XStream(new DomDriver());
+        XStream.setupDefaultSecurity(xstream);
+        xstream.allowTypes(classes);
+
+        /* Source: https://x-stream.github.io/security.html#framework
+         * Fixing security/permission set bug --> 04/12/2023
+         * */
+        xstream.addPermission(AnyTypePermission.ANY);
+
+        ObjectInputStream in = xstream.createObjectInputStream(new FileReader("retrovideogamesystem.xml"));
+        gameMachines = (CustomLinkedList<GameMachine>) in.readObject();
+        in.close();
+    }
+
+
+    public void reset() {
+        gameMachines.resetList();
+        try {
+            save(); // Reset overrides system, resetting XML file also
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 

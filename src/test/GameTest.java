@@ -1,5 +1,5 @@
 /*
-import model.Game;
+import model.OriginalGame;
 import model.GameMachine;
 import model.GamePort;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +12,7 @@ public class GameTest {
     @Test
     void testConstructor() {
         // Create a new Game instance using the constructor
-        Game game = new Game("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
+        OriginalGame game = new OriginalGame("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
 
         // Verify that the attributes are set correctly
         assertEquals("TestTitle", game.getTitle());
@@ -25,8 +25,8 @@ public class GameTest {
 
     @Test
     void testGetTitle() {
-        // Create a Game instance
-        Game game = new Game("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
+        // Create a OriginalGame instance
+        OriginalGame game = new OriginalGame("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
 
         // Verify that the getTitle method returns the correct value
         assertEquals("TestTitle", game.getTitle());
@@ -34,8 +34,8 @@ public class GameTest {
 
     @Test
     void testSetTitle() {
-        // Create a Game instance
-        Game game = new Game("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
+        // Create a OriginalGame instance
+        OriginalGame game = new OriginalGame("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
 
         // Set a new title using setTitle method
         game.setTitle("UpdatedTitle");
@@ -49,7 +49,7 @@ public class GameTest {
     @Test
     void testGetYearReleased() {
         // Create a Game instance
-        Game game = new Game("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
+        OriginalGame game = new OriginalGame("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
 
         // Verify that the getYearReleased method returns the correct value
         assertEquals(2022, game.getYearReleased());
@@ -57,8 +57,8 @@ public class GameTest {
 
     @Test
     void testSetYearReleased() {
-        // Create a Game instance
-        Game game = new Game("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
+        // Create a OriginalGame instance
+        OriginalGame game = new OriginalGame("TestTitle", "TestPublisher", "TestDescription", "TestDeveloper", 2022, "http://cover-art-url.com");
 
         // Set a new yearReleased using setYearReleased method
         game.setYearReleased(2023);

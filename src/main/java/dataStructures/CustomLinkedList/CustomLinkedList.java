@@ -44,6 +44,11 @@ public class CustomLinkedList<T> implements Iterable<T> {
         return -1; // No elements in list, hence return -1;
     }
 
+    public boolean resetList(){
+        this.head=null;
+        return true;
+    }
+
     public int size() {
         Node<T> temp = head;
         int size = 0;
