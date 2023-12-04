@@ -54,7 +54,7 @@ public class SystemAPI {
 
     /* GAME PORT CRUD */
     public boolean addGamePort(String portedToMachineName, String gameTitle, GamePort newGamePort){
-        // allowing game ports to be added for games that do not exist for now
+        //allowing game ports to be added for games that do not exist for now
         for(GameMachine gameMachine : gameMachines){
             if (gameMachine.getName().contains(portedToMachineName)){
                 return gameMachine.addGamePort(gameTitle,newGamePort);
