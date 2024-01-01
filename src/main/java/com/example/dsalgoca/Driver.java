@@ -6,7 +6,12 @@ import model.GameMachine;
 import model.GamePort;
 import model.OriginalGame;
 import utils.ScannerInput;
-
+/*
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+*/
 
 
 
@@ -20,11 +25,14 @@ public class Driver /* extends Application */ {
         new Driver();
     }
 
-
-
     public Driver(){
+        //TestingApplication();
         runMenu();
+    }
 
+
+
+    public void TestingApplication(){
 
         GameMachine xbox = new GameMachine("Xbox","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
         GameMachine playstation2 = new GameMachine("Playstation2","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
@@ -55,20 +63,23 @@ public class Driver /* extends Application */ {
 
         playstation2.addGamePort("Zelda", gamePortZelda);
         playstation2.addGamePort("GTA 5", gamePortGTA);
-       playstation2.addGamePort("Minecraft", gamePortMinecraft);
+        playstation2.addGamePort("Minecraft", gamePortMinecraft);
         playstation2.addGamePort("Pokemon", gamePortPokemon);
 
-        reset();
+        //reset();
         save();
-        System.out.println(systemAPI.getGameMachines().listElements());
+        load();
+
+        System.out.println(systemAPI.listGamesAndPortedGames());
+        //System.out.println(systemAPI.getGameMachines().listElements());
 
         //String foundGameTitle = systemAPI.searchForGameTitle("UFC");
         //System.out.println(foundGameTitle);
+        //load();
+       // OriginalGame foundGame = systemAPI.searchForOriginalGame("fc24");
+        //System.out.println("Found game by search for -UFC- ; " + foundGame);
 
-        //playstation2.addGame(gtaGame);
-        //playstation2.addGamePort("Zelda",gamePort1);
-
-        System.out.println(systemAPI.listGamesAndPortedGames());
+       //System.out.println(systemAPI.listGamesAndPortedGames());
 
 
     }
@@ -231,11 +242,9 @@ public class Driver /* extends Application */ {
         String URL = ScannerInput.readNextLine("Insert a URL: ");
 
         OriginalGame newGame = new OriginalGame(title,publisher,description,originalDev,launchYear,URL);
-        systemAPI.addGameToMachine(machineName,newGame);
+        boolean isAdded = systemAPI.addGameToMachine(machineName,newGame);
 
-        boolean added = systemAPI.addGameToMachine(machineName,newGame);
-
-        if (added){
+        if (isAdded){
             System.out.println("Game Added successfully to the machine.");
         }else {
             System.out.println("Failed to add the game.Machine not Found");
@@ -246,8 +255,8 @@ public class Driver /* extends Application */ {
         String listOfMachines = systemAPI.listAllMachines();
         System.out.println(listOfMachines);
 
-        int indexOfMachine = ScannerInput.readNextInt("Enter the index of the machine: ");
         String machineName = ScannerInput.readNextLine("Enter the Game machine name:" );
+        int indexOfGame = ScannerInput.readNextInt("Enter the index of the game: ");
         String gameTitle = ScannerInput.readNextLine("Enter the Game Title to update: ");
         String publisher = ScannerInput.readNextLine("Enter the updated publisher: ");
         String description = ScannerInput.readNextLine("Enter the updated description: ");
@@ -257,7 +266,7 @@ public class Driver /* extends Application */ {
 
         OriginalGame updatedGame = new OriginalGame(gameTitle,publisher,description,originalDev,yearReleased,URL);
 
-        boolean updated = systemAPI.updateGame(updatedGame,machineName,indexOfMachine);
+        boolean updated = systemAPI.updateGame(updatedGame,machineName,indexOfGame);
 
         if (updated){
             System.out.println("Game updated successfully");
@@ -289,7 +298,7 @@ public class Driver /* extends Application */ {
 
         String listOfMachines = systemAPI.listAllMachines();
         System.out.println(listOfMachines);
-        String machineName = ScannerInput.readNextLine("Enter original machine name: ");
+        String machineName = ScannerInput.readNextLine("Enter machine you want to port to (name): ");
 
 
         String listOfGames = systemAPI.listAllGames();
@@ -308,17 +317,18 @@ public class Driver /* extends Application */ {
     }
 
     private void updateGamePort(SystemAPI systemAPI){
-        int indexOfMachine = ScannerInput.readNextInt("Enter the Index of the machine: ");
+
         String machineName = ScannerInput.readNextLine("Enter the Machine Name: ");
-        String gameTitle = ScannerInput.readNextLine("Enter the game title: ");
-        String gamePortDev = ScannerInput.readNextLine("Enter the Game Developer");
+        int indexOfPortedGame = ScannerInput.readNextInt("Enter the Index of the ported game: ");
+        String gameTitle = ScannerInput.readNextLine("Enter the original game title: ");
+        String gamePortDev = ScannerInput.readNextLine("Enter the updated Game Developer");
         int releaseYear = ScannerInput.readNextInt("Enter the updated release date");
         String CoverArtURL =ScannerInput.readNextLine("Enter the updated URL: ");
 
         OriginalGame originalGame = systemAPI.searchForOriginalGame(gameTitle);
         GamePort newPort = new GamePort(originalGame,gamePortDev,releaseYear,CoverArtURL);
 
-        boolean updated = systemAPI.updateGamePort(newPort,machineName,indexOfMachine);
+        boolean updated = systemAPI.updateGamePort(newPort,machineName,indexOfPortedGame);
 
         if (updated){
             System.out.println("Ported Game updated successfully");

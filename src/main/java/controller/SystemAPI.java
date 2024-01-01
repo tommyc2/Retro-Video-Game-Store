@@ -154,14 +154,13 @@ public class SystemAPI {
 
 
     public String listAllMachines(){
-        // sort Machines
         String listOfMachines = gameMachines.listElements();
         if (listOfMachines.isEmpty()) return "No machines added";
         return listOfMachines;
     }
 
     public String listAllGames() {
-        // sort games
+        sortGamesByTitleAscending();
         String list = "";
         for (GameMachine gameMachine : gameMachines) {
             list += gameMachine.listGamesInGameMachine() + "\n";
@@ -171,7 +170,8 @@ public class SystemAPI {
     }
 
     public String listGamesAndPortedGames(){
-        // sort Games and Ported Games
+        sortGamesByTitleAscending();
+        sortPortedGamesByGameTitleAscending();
         String listOfGamesWithPortedGameVersions = "";
 
         for(GameMachine gameMachine : gameMachines){

@@ -118,7 +118,6 @@ GameMachine {
 
 
     public String listGamesInGameMachine(){
-        sortGamesByYearReleasedAscending();
         String listOfGamesInMachine = games.listTableElements();
         if(listOfGamesInMachine.isEmpty()) return "No games in machine";
         return listOfGamesInMachine;
@@ -175,7 +174,6 @@ GameMachine {
     }
 
     public String listPortedGamesForMachine(){
-        sortPortedGamesByYearReleasedAscending();
         String listOfPortedGamesInMachine = portedGames.listTableElements();
         if(listOfPortedGamesInMachine.isEmpty()) return "No ported games in machine";
         return listOfPortedGamesInMachine;
