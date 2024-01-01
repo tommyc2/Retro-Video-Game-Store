@@ -272,15 +272,9 @@ GameMachine {
 
     @Override
     public String toString() {
-        return "GameMachine { " +
-                "name='" + name + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
-                ", description='" + description + '\'' +
-                ", type='" + type + '\'' +
-                ", media='" + media + '\'' +
-                ", initialLaunchYear=" + initialLaunchYear +
-                ", price=" + price +
-                ", URL='" + URL + '\'' +
-                '}';
+        return String.format("GameMachine{name='%s', manufacturer='%s', description='%s', type='%s', " +
+                        "media='%s', initialLaunchYear=%d, price=%.2f, URL='%s'}",
+                name, manufacturer, description, type, media, initialLaunchYear, price, URL);
     }
+
 }
