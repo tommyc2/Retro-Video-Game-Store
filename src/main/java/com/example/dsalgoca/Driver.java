@@ -31,7 +31,7 @@ public class Driver /* extends Application */ {
     }
 
     public Driver(){
-        // launch();
+        //launch();
         GameMachine xbox = new GameMachine("Xbox","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
         GameMachine playstation2 = new GameMachine("Playstation2","Sony","Console", "Playstation","media",2001,400,"www.sony.com");
 
