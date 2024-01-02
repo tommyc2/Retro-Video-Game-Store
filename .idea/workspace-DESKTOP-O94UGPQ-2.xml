@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e10c974-49c3-4a4c-8027-23688591c66b" name="Changes" comment="CRUD for game machine and remove() method in LinkedList class">
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataStructures/Hashing/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataStructures/Hashing/HashTable.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tommyc2&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="8ec6316d-3679-436f-8fba-a824a751f17a" />
+        <option name="url" value="https://github.com/tommyc2/DS-ALGO-CA-2.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2Y7lOZD305pNlXX333fHzeXLPjB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/tcmed/OneDrive - South East Technological University (Waterford Campus)/Year 1/Semester-2/Programming-2/tommyCondon",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tcmed\OneDrive - South East Technological University (Waterford Campus)\Year 2\Semester-3\Data-structures-algorithms\DS-ALGO-CA-2\src\dataStructures" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tcmed\OneDrive - South East Technological University (Waterford Campus)\Year 2\Semester-3\Data-structures-algorithms\DS-ALGO-CA-2\src\dataStructures\CustomLinkedList" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.dsalgoca2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Driver">
+    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dsalgoca.Driver" />
+      <module name="DS-ALGO-CA-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dsalgoca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DS-ALGO-CA-2 [clean,install]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Driver" />
+      <item itemvalue="Maven.DS-ALGO-CA-2 [clean,install]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Driver" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e10c974-49c3-4a4c-8027-23688591c66b" name="Changes" comment="" />
+      <created>1699884469526</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699884469526</updated>
+      <workItem from="1699884471216" duration="880000" />
+      <workItem from="1700052550712" duration="914000" />
+      <workItem from="1700069978715" duration="2900000" />
+      <workItem from="1700072895854" duration="192000" />
+      <workItem from="1700165505001" duration="4943000" />
+      <workItem from="1700407140127" duration="2513000" />
+      <workItem from="1700493379954" duration="5712000" />
+      <workItem from="1700514074715" duration="923000" />
+      <workItem from="1700592146687" duration="1010000" />
+      <workItem from="1700593175418" duration="56000" />
+      <workItem from="1700598116881" duration="89000" />
+      <workItem from="1700645265429" duration="2465000" />
+      <workItem from="1700653611439" duration="80000" />
+      <workItem from="1700654190022" duration="435000" />
+      <workItem from="1700675764188" duration="1683000" />
+      <workItem from="1700742693301" duration="4569000" />
+      <workItem from="1701192175841" duration="302000" />
+    </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1699884533747</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699884533747</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test">
+      <created>1699884877563</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699884877563</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Create folders">
+      <created>1699885344565</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699885344565</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Create Game.java model, GamePort.java model">
+      <option name="closed" value="true" />
+      <created>1700071568844</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700071568844</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Create Data Structures folder with boilerplate code for structures">
+      <option name="closed" value="true" />
+      <created>1700072874502</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700072874502</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Create GamePort class and finish CustomLinkedList">
+      <option name="closed" value="true" />
+      <created>1700173733635</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700173733635</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Pull">
+      <created>1700407430647</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700407430647</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Minor adjustments to GameMachine and Game classes">
+      <created>1700407939246</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700407939246</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Boiler plate code for systemAPI constructor and HashTable">
+      <created>1700409649382</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700409649383</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updating repo with blueprint">
+      <created>1700495240724</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700495240724</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Start APi methods">
+      <created>1700507953938</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700507953938</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update">
+      <option name="closed" value="true" />
+      <created>1700514389611</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700514389611</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Insert header for hashtable class">
+      <option name="closed" value="true" />
+      <created>1700592221135</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700592221135</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Insert header for hashtable class">
+      <option name="closed" value="true" />
+      <created>1700592453898</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700592453898</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Fix comment">
+      <option name="closed" value="true" />
+      <created>1700592871389</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700592871389</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix comment">
+      <option name="closed" value="true" />
+      <created>1700593143157</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593143157</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fix comment 2">
+      <created>1700593219665</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593219665</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fix 3">
+      <option name="closed" value="true" />
+      <created>1700593748804</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593748804</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fix 3">
+      <option name="closed" value="true" />
+      <created>1700593778463</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593778463</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fix 4">
+      <option name="closed" value="true" />
+      <created>1700593797224</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700593797224</updated>
+    </task>
+    <task id="LOCAL-00021" summary="HashTable indexing methods">
+      <option name="closed" value="true" />
+      <created>1700597985239</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1700597985239</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Moving classes to new location">
+      <option name="closed" value="true" />
+      <created>1700676819397</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1700676819397</updated>
+    </task>
+    <task id="LOCAL-00023" summary="CRUD for game machine and remove() method in LinkedList class">
+      <option name="closed" value="true" />
+      <created>1700747328053</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1700747328053</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <MESSAGE value="Create folders" />
+    <MESSAGE value="Create Game.java model, GamePort.java model" />
+    <MESSAGE value="Create Data Structures folder with boilerplate code for structures" />
+    <MESSAGE value="Create GamePort class and finish CustomLinkedList" />
+    <MESSAGE value="Pull" />
+    <MESSAGE value="Minor adjustments to GameMachine and Game classes" />
+    <MESSAGE value="Boiler plate code for systemAPI constructor and HashTable" />
+    <MESSAGE value="Updating repo with blueprint" />
+    <MESSAGE value="Start APi methods" />
+    <MESSAGE value="Update" />
+    <MESSAGE value="Insert header for hashtable class" />
+    <MESSAGE value="Fix comment" />
+    <MESSAGE value="Fix comment 2" />
+    <MESSAGE value="Fix 3" />
+    <MESSAGE value="Fix 4" />
+    <MESSAGE value="HashTable indexing methods" />
+    <MESSAGE value="Moving classes to new location" />
+    <MESSAGE value="CRUD for game machine and remove() method in LinkedList class" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD for game machine and remove() method in LinkedList class" />
+  </component>
+</project>
