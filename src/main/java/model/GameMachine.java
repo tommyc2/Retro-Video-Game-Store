@@ -115,6 +115,7 @@ GameMachine {
                 portedGames.swapElements(start, smallestIndex);
             }
         }
+
     }
 
 
