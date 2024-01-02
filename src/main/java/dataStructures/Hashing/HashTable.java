@@ -46,6 +46,11 @@ public class HashTable<K,T> {
         int startLoc = location;
 
         do {
+
+            if (keys[location] == null){
+                return null;
+            }
+
             if(keys[location].equals(key)) {
                 return hashTable[location];
             }
