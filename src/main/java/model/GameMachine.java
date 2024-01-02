@@ -95,6 +95,7 @@ GameMachine {
                 games.swapElements(start, smallestIndex);
             }
         }
+
     }
 
     public void sortPortedGamesByGameTitleAscending() {
